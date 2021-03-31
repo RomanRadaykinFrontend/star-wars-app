@@ -1,0 +1,58 @@
+.wrapperContainer {
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+
+    .block {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    h2{
+      margin-left: 10px;
+      justify-content: center;
+    }
+
+    .block_item {
+
+      display: flex;
+      flex-direction: column;
+      z-index: 123;
+      position: relative;
+
+      :hover {
+        color: #1a1a1a;
+        background-color: yellow;
+        opacity: 0.7;
+      }
+
+      span {
+        display: block
+      }
+
+
+      .mainImage {
+        width: 200px;
+        height: auto;
+        background-size: 200px auto;
+        color: red;
+        margin: 5px;
+        z-index: -5;
+        position: relative;
+      }
+    }
+
+  }
+}
+
+
+
+
+

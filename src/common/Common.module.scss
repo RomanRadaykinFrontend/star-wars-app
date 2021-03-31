@@ -1,0 +1,51 @@
+
+@mixin cardBlock {
+
+  .cardNav{
+    padding: 0;
+    color: white;
+    text-decoration: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  .block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .block_item {
+    display: flex;
+    flex-direction: column;
+    z-index: 123;
+    position: relative;
+
+    &:hover {
+      color: #1a1a1a;
+      background-color: yellow;
+      opacity: 0.7;
+    }
+  }
+
+  .mainImage {
+    width: 200px;
+    height: auto;
+    background-size: 200px auto;
+    color: red;
+    margin: 5px;
+    z-index: -5;
+    position: relative;
+  }
+
+
+  .wrapperContainer {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+  }
+}
