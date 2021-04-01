@@ -46,7 +46,7 @@ function App() {
             <Nav/>
 
             <Route exact path='/' render={() => <BlockOnMainPage arrayOfElements={arrayOfPeoples}
-                                                           name={'People'}
+                                                           name={'Characters'}
                                                            imageURL={charactersImageURL} />}/>
             <Route exact path='/' render={() => <BlockOnMainPage arrayOfElements={arrayOfPlanets}
                                                            name={'Planets'}
@@ -58,7 +58,7 @@ function App() {
                                                            name={'Vehicles'}
                                                            imageURL={vehiclesImageURL}/>}/>
 
-            <Route exact path='/peoples' render={() => <PeoplesPage typeOfItems={'peoples'}/>}/>
+            <Route exact path='/characters' render={() => <PeoplesPage typeOfItems={'characters'}/>}/>
             <Route exact path='/starships' render={() => <StarshipsPage typeOfItems={'starships'}/>}/>
             <Route exact path='/vehicles' render={() => <VehiclesPage typeOfItems={'vehicles'}/>}/>
             <Route exact path='/planets' render={() => <PlanetsPage typeOfItems={'planets'}/>}/>

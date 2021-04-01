@@ -11,7 +11,7 @@ import CardItem, { CardItemPropsType } from "../CardItem/CardItem";
 import { Route } from 'react-router-dom';
 
 type AllItemsPropsType = {
-    typeOfItems: 'peoples' | 'starships' | 'planets' | 'vehicles'
+    typeOfItems: 'characters' | 'starships' | 'planets' | 'vehicles'
 
 }
 
@@ -42,12 +42,12 @@ const AllItem = (props: AllItemsPropsType) => {
     let arrayOfItems: Array<any> = [];
 
     switch (props.typeOfItems) {
-        case 'peoples':
+        case 'characters':
             arrayOfItems = peoplesData.people.map((item) => {
                 const pictureNumberString = getPictureNumberString(item.url)
                 return <CardItem pictureNumberString={pictureNumberString}
                                  name={props.typeOfItems}
-                                 itemName={item.name} imageURL={baseImageURL + 'characters/'}/>
+                                 itemName={item.name} imageURL={baseImageURL + props.typeOfItems + '/'}/>
             })
             break
         case 'planets':

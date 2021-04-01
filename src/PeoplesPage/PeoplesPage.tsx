@@ -2,7 +2,7 @@ import React from 'react';
 import AllItems from "../AllItems/AllItems";
 
 type PeoplesPagePropsType = {
-    typeOfItems: 'peoples' | 'starships' | 'planets' | 'vehicles'
+    typeOfItems: 'characters' | 'starships' | 'planets' | 'vehicles'
 }
 
 const PeoplesPage = (props: PeoplesPagePropsType) => {

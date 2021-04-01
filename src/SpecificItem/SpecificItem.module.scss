@@ -1,0 +1,20 @@
+.specificItemWrapper{
+  width: 70%;
+  display: flex;
+  margin: 50px auto;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px yellow solid;
+  padding: 50px 0;
+
+  .photo{
+    width: 300px;
+    img{
+      width: 100%
+    }
+  }
+
+  .info{
+    font-size: 20px;
+  }
+}
