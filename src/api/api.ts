@@ -7,7 +7,12 @@ const instance = axios.create({
 export const commonApi = {
     getSpecificItem(species: string, id: string){
         return instance.get(`${species}/${id}`)
+    },
+    getNextPage(species: string, page: number){
+        return instance.get(`${species}/?page=${page}`)
     }
+
+    /*"http://swapi.dev/api/people/?page=2"*/
 }
 
 export const peopleApi = {

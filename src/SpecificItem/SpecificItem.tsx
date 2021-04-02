@@ -19,38 +19,53 @@ const SpecificItem = () => {
     }
 
     useEffect(() => {
-        dispatch(getSpecificItemThunk(species, id))
+        if(species === 'characters'){
+            dispatch(getSpecificItemThunk('people', id))
+        } else {
+            dispatch(getSpecificItemThunk(species, id))
+        }
     }, [])
 
 
     const entries = Object.entries(data)
     console.log(entries)
 
-    const actualInfo = entries.map((item) => {
-        if (item[0] !== "films" && item[0] !== 'species' && item[0] !== 'vehicles' && item[0] !== 'starships'
+    const sortEntries = entries.filter((item) => {
+        return item[0] !== "films" && item[0] !== 'species' && item[0] !== 'vehicles' && item[0] !== 'starships'
             && item[0] !== 'created' && item[0] !== 'edited' && item[0] !== 'url' && item[0] !== 'homeworld'
-            && item[0] !== 'residents' && item[0] !== 'pilots') {
+            && item[0] !== 'residents' && item[0] !== 'pilots';
 
-            const property = (item[0][0].toUpperCase() + item[0].substring(1) + ': ').split('_').join(' ');
-            return [property, item[1]]
-        }
     })
 
+    const infoArray = sortEntries.map(item => {
+        const property = (item[0][0].toUpperCase() + item[0].substring(1) + ': ').split('_').join(' ');
 
+       return [property, item[1]]
+    })
+
+    console.log(infoArray)
     return <div className={style.specificItemWrapper}>
 
-        <div className={style.photo}>
-            <img src={imageURL + `${species}/${id}.jpg`}
-                 onError={error}
-                 alt={'image'}
-                 className={style.mainImage}/>
-        </div>
+        <h1>
+            {infoArray[0] && infoArray[0][1]}
+        </h1>
 
+        <div className={style.mainInfo}>
+            <div className={style.photo}>
 
-        <div className={style.info} style={{color: 'white'}}>
-            {actualInfo.map(item => {
-                return <div>{item}</div>
-            })}
+                <img src={imageURL + `${species}/${id}.jpg`}
+                     onError={error}
+                     alt={'image'}
+                     className={style.mainImage}/>
+            </div>
+            <div className={style.info}>
+                {infoArray.splice(1).map(item => {
+                    return <div className={style.infoItem}>
+                        <span className={style.nameProperty}>{item[0] + '   '}</span>
+                        <span className={style.property}>{item[1]}</span>
+                    </div>
+                })}
+            </div>
         </div>
     </div>
 }

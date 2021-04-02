@@ -1,5 +1,5 @@
 import {Dispatch} from "react";
-import {peopleApi} from "../api/api";
+import {commonApi, peopleApi} from "../api/api";
 
 export type PeopleItemStateType = {
     birth_year: string
@@ -21,17 +21,18 @@ export type PeopleItemStateType = {
 }
 type PeopleStateType = {
     people: Array<PeopleItemStateType>
-    //count: number
+    count: number
     //previous: null | string
 }
 const initState: PeopleStateType = {
-    people: []
+    people: [],
+    count: 82
 }
 
 export const peopleReducer = (state = initState, action: ActionTypes): PeopleStateType => {
     switch (action.type) {
         case 'SET_PEOPLE':
-            return {...state, people: [ ...action.payload.people, ...state.people]}
+            return {...state, people: [ ...action.payload.people]}
         default:
             return state
     }
@@ -43,7 +44,7 @@ export const setPeopleAC = (people: Array<PeopleItemStateType>) => {
     return {
         type: 'SET_PEOPLE',
         payload: {
-            people: people
+            people
         }
     } as const
 }
@@ -54,5 +55,14 @@ export const getPeopleThunk = () => {
                 .then(response => {
                     dispatch(setPeopleAC(response.data.results))
                 })
+    }
+}
+
+export const getNextPagePeopleThunk = (species: string, page: number) => {
+    return (dispatch: Dispatch<ActionTypes>) => {
+        commonApi.getNextPage(species, page)
+            .then(response => {
+                dispatch(setPeopleAC(response.data.results))
+            })
     }
 }

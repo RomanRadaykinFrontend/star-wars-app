@@ -1,5 +1,6 @@
 import {Dispatch} from "react";
-import {vehiclesApi} from "../api/api";
+import {commonApi, vehiclesApi} from "../api/api";
+import {setStarshipsAC} from "./starships-reducer";
 
 export type VehicleItemStateType = {
     cargo_capacity: string
@@ -21,18 +22,19 @@ export type VehicleItemStateType = {
 }
 type VehiclesStateType = {
     vehicles: Array<VehicleItemStateType>
-    //count: number
+    count: number
     //previous: null | string
 }
 const initState: VehiclesStateType = {
-    vehicles: []
+    vehicles: [],
+    count: 39
 }
 
 
 export const vehiclesReducer = (state = initState, action: ActionTypes): VehiclesStateType => {
     switch (action.type) {
         case 'SET_VEHICLES':
-            return {...state, vehicles: [...action.payload.vehicles, ...state.vehicles]}
+            return {...state, vehicles: [...action.payload.vehicles]}
         default:
             return state
     }
@@ -56,5 +58,15 @@ export const getVehiclesThunk = () => {
         })
     }
 }
+
+export const getNextPageVehiclesThunk = (species: string, page: number) => {
+    return (dispatch: Dispatch<ActionTypes>) => {
+        commonApi.getNextPage(species, page)
+            .then(response => {
+                dispatch(setVehiclesAC(response.data.results))
+            })
+    }
+}
+
 
 

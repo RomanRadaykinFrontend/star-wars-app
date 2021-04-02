@@ -15,6 +15,7 @@ import StarshipsPage from "./StarshipsPage/StarshipsPage";
 import VehiclesPage from "./VehiclesPage/VehiclesPage";
 import PeoplesPage from "./PeoplesPage/PeoplesPage";
 import SpecificItem from "./SpecificItem/SpecificItem";
+import Header from './Header/Header';
 
 
 
@@ -43,7 +44,7 @@ function App() {
 
     return (
         <div className="App">
-            <Nav/>
+            <Header/>
 
             <Route exact path='/' render={() => <BlockOnMainPage arrayOfElements={arrayOfPeoples}
                                                            name={'Characters'}

@@ -1,0 +1,14 @@
+.buttonsWrapper{
+  button{
+    background-color: yellow;
+    outline: none;
+
+    &:hover{
+      cursor: pointer;
+    }
+    &:active{
+      border: none;
+    }
+  }
+
+}

@@ -1,5 +1,6 @@
 import {Dispatch} from "react";
-import {starshipsApi} from "../api/api";
+import {commonApi, starshipsApi} from "../api/api";
+import {setPeopleAC} from "./people-reducer";
 
 export type StarshipItemStateType = {
     MGLT: string
@@ -23,17 +24,18 @@ export type StarshipItemStateType = {
 }
 type StarshipsStateType = {
     starships: Array<StarshipItemStateType>
-    //count: number
+    count: number
     //previous: null | string
 }
 const initState: StarshipsStateType = {
-    starships: []
+    starships: [],
+    count: 36
 }
 
 export const starshipsReducer = (state = initState, action: ActionTypes): StarshipsStateType => {
     switch (action.type) {
         case 'SET_STARSHIPS':
-            return {...state, starships: [ ...action.payload.starships, ...state.starships]}
+            return {...state, starships: [ ...action.payload.starships]}
         default:
             return state
     }
@@ -56,5 +58,14 @@ export const getStarshipsThunk = () => {
                 .then(response => {
                     dispatch(setStarshipsAC(response.data.results))
                 })
+    }
+}
+
+export const getNextPageStarshipsThunk = (species: string, page: number) => {
+    return (dispatch: Dispatch<ActionTypes>) => {
+        commonApi.getNextPage(species, page)
+            .then(response => {
+                dispatch(setStarshipsAC(response.data.results))
+            })
     }
 }

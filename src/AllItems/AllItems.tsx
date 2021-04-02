@@ -30,16 +30,9 @@ const AllItem = (props: AllItemsPropsType) => {
         vehiclesData,
         planetsData
     } = useSelector<RootStateType, RootStateType>(state => state);
-    const dispatch = useDispatch()
-
-    /*    useEffect(() => {
-            props.typeOfItems === 'peoples' && dispatch(getPeopleThunk())
-            props.typeOfItems === 'planets' && dispatch(getPlanetsThunk())
-            props.typeOfItems === 'starships' && dispatch(getStarshipsThunk())
-            props.typeOfItems === 'vehicles' && dispatch(getVehiclesThunk())
-        }, []);*/
 
     let arrayOfItems: Array<any> = [];
+    const imageURL = baseImageURL + props.typeOfItems + '/';
 
     switch (props.typeOfItems) {
         case 'characters':
@@ -47,7 +40,7 @@ const AllItem = (props: AllItemsPropsType) => {
                 const pictureNumberString = getPictureNumberString(item.url)
                 return <CardItem pictureNumberString={pictureNumberString}
                                  name={props.typeOfItems}
-                                 itemName={item.name} imageURL={baseImageURL + props.typeOfItems + '/'}/>
+                                 itemName={item.name} imageURL={imageURL}/>
             })
             break
         case 'planets':
@@ -55,7 +48,7 @@ const AllItem = (props: AllItemsPropsType) => {
                 const pictureNumberString = getPictureNumberString(item.url)
                 return <CardItem pictureNumberString={pictureNumberString}
                                  name={props.typeOfItems}
-                                 itemName={item.name} imageURL={baseImageURL + props.typeOfItems + '/'}/>
+                                 itemName={item.name} imageURL={imageURL}/>
             })
             break
         case 'starships':
@@ -63,7 +56,7 @@ const AllItem = (props: AllItemsPropsType) => {
                 const pictureNumberString = getPictureNumberString(item.url)
                 return <CardItem pictureNumberString={pictureNumberString}
                                  name={props.typeOfItems}
-                                 itemName={item.name} imageURL={baseImageURL + props.typeOfItems + '/'}/>
+                                 itemName={item.name} imageURL={imageURL}/>
             })
             break
         case 'vehicles':
@@ -71,7 +64,7 @@ const AllItem = (props: AllItemsPropsType) => {
                 const pictureNumberString = getPictureNumberString(item.url)
                 return <CardItem pictureNumberString={pictureNumberString}
                                  name={props.typeOfItems}
-                                 itemName={item.name} imageURL={baseImageURL + props.typeOfItems + '/'}/>
+                                 itemName={item.name} imageURL={imageURL}/>
             })
             break
         default:

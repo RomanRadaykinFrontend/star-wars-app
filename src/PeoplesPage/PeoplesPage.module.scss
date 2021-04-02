@@ -1,0 +1,14 @@
+.pageWrapper{
+  .nameWrapper{
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    font-size: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1{
+      margin: 10px 0;
+    }
+  }
+}

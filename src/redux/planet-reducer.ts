@@ -1,5 +1,6 @@
 import {Dispatch} from "react";
-import {planetsApi} from "../api/api";
+import {commonApi, planetsApi} from "../api/api";
+import {setVehiclesAC} from "./vehicles-reducer";
 
 export type PlanetItemStateType = {
     climate: string
@@ -19,18 +20,19 @@ export type PlanetItemStateType = {
 }
 type PlanetsStateType = {
     planets: Array<PlanetItemStateType>
-    //count: number
+    count: number
     //previous: null | string
 }
 const initState: PlanetsStateType = {
-    planets: []
+    planets: [],
+    count: 60
 }
 
 
 export const planetsReducer = (state = initState, action: ActionTypes): PlanetsStateType => {
     switch (action.type) {
         case 'SET_PLANETS':
-            return {...state, planets: [...action.payload.planets, ...state.planets]}
+            return {...state, planets: [...action.payload.planets]}
         default:
             return state
     }
@@ -54,5 +56,16 @@ export const getPlanetsThunk = () => {
         })
     }
 }
+export const getNextPagePlanetsThunk = (species: string, page: number) => {
+    return (dispatch: Dispatch<ActionTypes>) => {
+        commonApi.getNextPage(species, page)
+            .then(response => {
+                dispatch(setPlanetsAC(response.data.results))
+            })
+    }
+}
+
+
+
 
 
