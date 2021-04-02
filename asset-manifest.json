@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/star-wars-app/static/css/main.814e3f15.chunk.css",
-    "main.js": "/star-wars-app/static/js/main.e70449a8.chunk.js",
-    "main.js.map": "/star-wars-app/static/js/main.e70449a8.chunk.js.map",
-    "runtime-main.js": "/star-wars-app/static/js/runtime-main.5c49c9a7.js",
-    "runtime-main.js.map": "/star-wars-app/static/js/runtime-main.5c49c9a7.js.map",
-    "static/js/2.c45d75ed.chunk.js": "/star-wars-app/static/js/2.c45d75ed.chunk.js",
-    "static/js/2.c45d75ed.chunk.js.map": "/star-wars-app/static/js/2.c45d75ed.chunk.js.map",
-    "static/js/3.dd1de5f9.chunk.js": "/star-wars-app/static/js/3.dd1de5f9.chunk.js",
-    "static/js/3.dd1de5f9.chunk.js.map": "/star-wars-app/static/js/3.dd1de5f9.chunk.js.map",
+    "main.css": "/star-wars-app/static/css/main.2daf239c.chunk.css",
+    "main.js": "/star-wars-app/static/js/main.b7614aa8.chunk.js",
+    "main.js.map": "/star-wars-app/static/js/main.b7614aa8.chunk.js.map",
+    "runtime-main.js": "/star-wars-app/static/js/runtime-main.937b40ed.js",
+    "runtime-main.js.map": "/star-wars-app/static/js/runtime-main.937b40ed.js.map",
+    "static/js/2.c73dffb0.chunk.js": "/star-wars-app/static/js/2.c73dffb0.chunk.js",
+    "static/js/2.c73dffb0.chunk.js.map": "/star-wars-app/static/js/2.c73dffb0.chunk.js.map",
+    "static/js/3.b828b77a.chunk.js": "/star-wars-app/static/js/3.b828b77a.chunk.js",
+    "static/js/3.b828b77a.chunk.js.map": "/star-wars-app/static/js/3.b828b77a.chunk.js.map",
     "index.html": "/star-wars-app/index.html",
-    "static/css/main.814e3f15.chunk.css.map": "/star-wars-app/static/css/main.814e3f15.chunk.css.map",
-    "static/js/2.c45d75ed.chunk.js.LICENSE.txt": "/star-wars-app/static/js/2.c45d75ed.chunk.js.LICENSE.txt"
+    "static/css/main.2daf239c.chunk.css.map": "/star-wars-app/static/css/main.2daf239c.chunk.css.map",
+    "static/js/2.c73dffb0.chunk.js.LICENSE.txt": "/star-wars-app/static/js/2.c73dffb0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5c49c9a7.js",
-    "static/js/2.c45d75ed.chunk.js",
-    "static/css/main.814e3f15.chunk.css",
-    "static/js/main.e70449a8.chunk.js"
+    "static/js/runtime-main.937b40ed.js",
+    "static/js/2.c73dffb0.chunk.js",
+    "static/css/main.2daf239c.chunk.css",
+    "static/js/main.b7614aa8.chunk.js"
   ]
 }
